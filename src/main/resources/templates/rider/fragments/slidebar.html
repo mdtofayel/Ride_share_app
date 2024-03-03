@@ -1,0 +1,37 @@
+<aside class="main-sidebar" xmlns:th="http://www.thymeleaf.org">
+<!--slide bar-->
+<div class="sidebar-menu">
+    <header class="logo1">
+        <a th:href="@{#}" class="sidebar-icon"> <span class="fa fa-bars"></span> </a>
+    </header>
+    <div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
+
+    <div class="menu">
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img class="img-circle" th:src="@{'/rider/image/'+${riderProfile.user.mobileNo}}"
+                     alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p ></p>
+                <a href="#"><i class="fa fa-circle text-success"></i>Online</a>
+            </div>
+        </div>
+        <ul id="menu" >
+            <li id="menu-academico" ><a th:href="@{/rider/riderhome}"><i class="fa fa-home"></i><span>Home</span></a></li>
+
+            <li id="menu-academico" ><a th:href="@{/rider/ridertrip}"><i class="fa fa-map-marker"></i> <span>Trip</span></a></li>
+
+            <li id="menu-academico" ><a th:href="@{/rider/riderwallet}"><i class="fa fa-list-alt"></i> <span>My Wallet</span></a></li>
+
+            <li id="menu-academico" ><a th:href="@{/rider/riderwallet}"><i class="fa fa-list-alt"></i> <span>Payment</span></a></li>
+
+            <li id="menu-academico" ><a th:href="@{/rider/ridersetting}"><i class="fa fa-cog"></i> <span>Setting</span></a></li>
+
+            <li><a th:href="@{/logout}"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
+        </ul>
+    </div>
+</div>
+<div class="clearfix"></div>
+</aside>
+

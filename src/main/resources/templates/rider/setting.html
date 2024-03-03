@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>share Ride</title>
+    <th:block th:include="/rider/fragments/headerlink :: head"></th:block>
+
+</head>
+<div class="page-container">
+    <!--/content-inner-->
+    <div class="left-content">
+        <div class="inner-content">
+
+            <header th:include="/rider/fragments/header :: header"></header>
+            <div class="content">
+                <div class="women_main">
+                    <div class="container">
+                        <h1 style="color:#B52E31 ">Settings</h1>
+                        <ul class="nav nav-tabs" id="tabn" role="tablist">
+                            <li role="presentation" class="nav-item active"><a href="#rider" class="nav-link"
+                                                                               aria-controls="rider" role="tab"
+                                                                               data-toggle="tab">Account</a></li>
+                            <li role="presentation" class="nav-item"><a href="#privacy" aria-controls="driver"
+                                                                        class="nav-link" role="tab" data-toggle="tab">Privacy
+                                Settings</a></li>
+                            <li role="presentation" class="nav-item"><a href="#add_home" aria-controls="driver"
+                                                                        class="nav-link" role="tab" data-toggle="tab">Add
+                                Home</a></li>
+                            <li role="presentation" class="nav-item"><a href="#add_work" aria-controls="driver"
+                                                                        class="nav-link" role="tab" data-toggle="tab">Add
+                                Work</a></li>
+                            <li role="presentation" class="nav-item"><a href="#more" aria-controls="driver"
+                                                                        class="nav-link" role="tab" data-toggle="tab">More
+                                Placs</a></li>
+                            <li role="presentation" class="nav-item"><a href="#notifi" aria-controls="driver"
+                                                                        class="nav-link" role="tab" data-toggle="tab">Notification</a>
+                            </li>
+
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="rider">
+                                <div class="box-body">
+                                    <p style="margin-top: 8px">Payment Method</p>
+                                    <a class="" data-toggle="collapse" href="#collapsex" aria-expanded="false"
+                                       aria-controls="collapsex">Add Business Profile</a>
+                                    <div id="collapsex" class="collapse col-md-12">
+                                        <div class="paymentWrap">
+                                            <div class="btn-group paymentBtnGroup btn-group-justified"
+                                                 data-toggle="buttons">
+                                                <label class="btn paymentMethod active" data-toggle="modal"
+                                                       data-target="#myModal">
+                                                    <div class="method visa"></div>
+                                                    <input type="radio" name="options" checked>
+                                                </label>
+                                                <label class="btn paymentMethod" data-toggle="modal"
+                                                       data-target="#myModal">
+                                                    <div class="method master-card"></div>
+                                                    <input type="radio" name="options">
+                                                </label>
+                                                <!-- <label class="btn paymentMethod">
+                                                     <div class="method amex"></div>
+                                                     <input type="radio" name="options">
+                                                 </label>
+                                                 <label class="btn paymentMethod">
+                                                     <div class="method vishwa"></div>
+                                                     <input type="radio" name="options">
+                                                 </label>
+                                                 <label class="btn paymentMethod">
+                                                     <div class="method ez-cash"></div>
+                                                     <input type="radio" name="options">
+                                                 </label>-->
+
+                                            </div>
+                                        </div>
+                                        <!--
+                                                                            <h6><img src="\images\paytm-512.png" height="20px"><span>PAytm</span> </h6>
+                                                                            <h6><img src="\images\cash-icon.png" height="20px"><span>Cash</span> </h6>-->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="privacy">
+                                <div class="box-body">
+                                    <h6 class="" data-toggle="collapse" href="#collaps" aria-expanded="false"
+                                        aria-controls="collapsex" style="cursor: pointer">Location</h6>
+                                    <div id="collaps" class="collapse col-md-12">
+
+                                        <div class="switchToggle">
+                                            <h5>Share Location</h5>
+                                            <input type="checkbox" id="switch">
+                                            <label for="switch">Toggle</label>
+                                        </div>
+                                        <div class="switchToggle">
+                                            <h5>Share Live Location</h5>
+                                            <input type="checkbox" id="switch1">
+                                            <label for="switch1">Toggle</label>
+                                        </div>
+                                    </div>
+
+                                    <h6 class="" data-toggle="collapse" href="#collap" aria-expanded="false"
+                                        aria-controls="collapsex" style="cursor: pointer">Contact</h6>
+                                    <div id="collap" class="collapse col-md-12">
+
+
+                                            <div class="form-group"> <div class="switchToggle">
+                                            <p>Sync Contact</p>
+                                            <input type="checkbox" id="switch2">
+                                            <label for="switch2">Toggle</label>
+                                        </div>
+                                        <!-- <div class="switchToggle">
+                                             <h3>Share Live Location</h3>
+                                             <input type="checkbox" id="switch1">
+                                             <label for="switch1">Toggle</label>
+                                         </div>-->
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="add_home">
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6><i class="fa fa-home"></i><span class="text-center" th:text="${riderProfile.homeplaceName}">Najma</span>
+                                            </h6>
+                                            <input type="text" class="form-control" id="mapl" name="long" hidden th:name="latitude" th:value="${riderProfile.homePlaceLongitude}">
+                                            <input type="text" class="form-control" id="mapat" name="longa" hidden th:name="latitude" th:value="${riderProfile.homePlaceLatitude}">
+                                            <br>
+                                            <div id="map3">
+                                            </div>
+
+                                            <a class="" data-toggle="collapse" href="#collapseExample"
+                                               aria-expanded="false" aria-controls="collapseExample">
+                                                Change Home Location
+                                            </a>
+                                        </div>
+                                        <div id="collapseExample" class="collapse col-md-12">
+                                            <form  th:action="@{/rider/addhome}" method="post">
+                                            <div class="row form-group">
+                                                <div class="col-md-10" style="padding: 0px;">
+                                                    <input type="text" class="form-control" id="mapsearch" th:name="riderHomePlaceName" >
+                                                </div>
+
+
+                                                <input type="text" class="form-control" id="maplong" name="long" hidden th:name="latitude">
+                                                <input type="text" class="form-control" id="maplat" name="lat" hidden th:name="longitude">
+                                                <div class="col-md-2">
+                                                    <button type="submit" class="btn btn-primary text-center " style="padding-right: 7px" >ADD Home Location</button>
+                                                </div>
+                                                <div id="map">
+                                                </div>
+
+
+                                            </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="add_work">
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6><i class="fa fa-home"></i><span class="text-center" th:text="${riderProfile.workPlaceName}"
+                                                                               >Jadeed</span>
+                                            </h6>
+                                            <a class="" data-toggle="collapse" href="#collapseEx" aria-expanded="false"
+                                               aria-controls="collapseExample">
+                                                Change Work Location
+                                            </a>
+                                        </div>
+
+                                        <div id="collapseEx" class="collapse col-md-12">
+                                            <form  th:action="@{/rider/addwork}" method="post">
+                                                <div class="row form-group">
+                                                    <div class="col-md-10" style="padding: 0px;">
+                                                <input type="text" class="form-control" id="mapsearch1" th:name="riderWorkPlaceName">
+                                                    </div>
+                                                <input type="text" class="form-control" id="maplong1" name="long"
+                                                       hidden th:name="latitude">
+                                                <input type="text" class="form-control" id="maplat1" name="lat" hidden th:name="longitude">
+                                                <div class="col-md-2">
+                                                    <button type="submit" class="btn btn-primary text-center " style="padding-right: 7px" >ADD Work Place</button>
+                                                </div>
+                                                <div id="map1">
+                                                </div>
+                                            </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="more">
+                                <div class="box-body">
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6><i class="fa fa-home"></i><span class="text-center"
+                                                                                style="margin-left: 25px">Jadeed</span>
+                                            </h6>
+                                            <a class="" data-toggle="collapse" href="#collapseE" aria-expanded="false"
+                                               aria-controls="collapseExample">
+                                                Add More Place
+                                            </a>
+                                        </div>
+                                        <div id="collapseE" class="collapse col-md-12">
+                                            <form  th:action="@{/rider/addotherplaces}" th:object="${riderSavePlaces}" method="post">
+
+                                                <input type="text" class="form-control"  hidden th:field="${riderSavePlaces.id}">
+                                                <div class="row form-group">
+                                                    <div class="col-md-10" style="padding: 0px;">
+                                                <input type="text" class="form-control" id="mapsearch2" th:field="${riderSavePlaces.locationName}"></div>
+                                                <input type="text" class="form-control" id="maplong2" name="long" hidden th:field="${riderSavePlaces.latitude}">
+                                                <input type="text" class="form-control" id="maplat2" name="lat" hidden th:field="${riderSavePlaces.longitude}">
+                                                <div class="col-md-2">
+                                                    <button type="submit" class="btn btn-primary text-center "  >ADD More Place</button>
+                                                </div>
+                                                <div id="map2">
+                                                </div>
+                                            </div>
+
+                                            </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="notifi">
+                                <div class="box-body">
+                                    <p class="" data-toggle="collapse" href="#colla" aria-expanded="false"
+                                       aria-controls="collapsex" style="cursor: pointer">Account and Trip Updatws</p>
+                                    <div id="colla" class="collapse col-md-12">
+                                        <div class="input-group">
+                                            <div id="radioBtn" class="btn-group">
+                                                <a class="btn btn-primary btn-sm active" data-toggle="happy"
+                                                   data-title="Y">Push Notifications(recomended)</a>
+                                                <a class="btn btn-primary btn-sm notActive" data-toggle="happy"
+                                                   data-title="N">Text Messages</a>
+                                            </div>
+                                            <input type="hidden" name="happy" id="happy">
+                                        </div>
+                                    </div>
+                                    <p class="" data-toggle="collapse" href="#col" aria-expanded="false"
+                                       aria-controls="collapsex" style="cursor: pointer">Discount and News</p>
+                                    <div id="col" class="collapse col-md-12">
+                                        <div class="input-group">
+                                            <div id="radioBtn" class="btn-group">
+                                                <a class="btn btn-primary btn-sm active" data-toggle="dis"
+                                                   data-title="Y">Push Notifications</a>
+                                                <a class="btn btn-primary btn-sm notActive" data-toggle="dis"
+                                                   data-title="N">Off</a>
+                                            </div>
+                                            <input type="hidden" name="dis" id="dis">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+
+                            <div class="modal-body">
+                                <!--  <h4 class="modal-title" id="myModalLabel">Modal title</h4>-->
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+
+                                <br>
+                                <div class="wrap">
+                                    <div class="mat-div">
+                                        <label for="first-name" class="mat-label">Add Email</label>
+                                        <input type="email" class="mat-input" id="first-name">
+                                    </div>
+                                </div>
+
+                                <button type="button" class="btn btn-primary float-right">Submit</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <th:block th:include="/rider/fragments/footer"></th:block>
+
+                <aside th:include="/rider/fragments/slidebar"></aside>
+            </div>
+        </div>
+    </div>
+</div>
+<th:block th:include="/rider/fragments/headerlink :: footer"></th:block>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-BStQ4iLyw9FxwXRhxt6BJtlr-iG33wk&libraries=places"
+        type="text/javascript"></script>
+
+
+<script>
+var latst = document.getElementById('mapl').value
+var latll = document.getElementById('mapat').value;
+var myLatLng = new google.maps.LatLng(latst, latll);
+    var map = new google.maps.Map(document.getElementById('map3'), {
+
+        zoom: 15,
+        center: myLatLng
+    });
+var marker5 = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Hello World!'
+});
+
+</script>
+<script th:src="@{/js/map.js}"></script>
+</body>
+</html>

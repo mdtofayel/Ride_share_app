@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>share Ride</title>
+    <th:block th:include="/driver/fragments/headerlink :: head"></th:block>
+</head>
+<div class="page-container">
+    <!--/content-inner-->
+    <div class="left-content">
+        <div class="inner-content">
+
+            <header th:include="/driver/fragments/header :: header"></header>
+            <div class="content">
+                <div class="women_main">
+                    <div class="container">
+
+                        <div class="registration">
+                            <div class="registration_left">
+                                <h2>Edit<span> Profile  </span></h2>
+
+                                <div class="registration_form">
+                                    <!-- Form -->
+                                    <form class="form-horizontal" role="form" th:object="${users}"
+                                          th:action="@{/updateProfile}" method="post" enctype="multipart/form-data">
+                                        <div class="form-group">
+
+                                            <img th:src="@{'/driverimage'+${users.email}}" Id='one' alt=""
+                                                 class=" img-fluid">
+                                            <div class="file btn btn-lg fa fa-plus-circle">
+                                                Change Photo
+                                                <input type="file" name="file" Id="imge" class="form-control"
+                                                       onchange='frontview(this);'/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>
+                                                <input placeholder="Full Name" type="text" tabindex="1" required=""
+                                                       th:field="${users.name}" autofocus="">
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>
+                                                <input placeholder="Location" type="text" tabindex="2" required=""
+                                                       autofocus="">
+                                            </label>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>
+                                                <input placeholder="Address" type="text" tabindex="4" required=""
+                                                       autofocus="">
+                                            </label>
+                                        </div>
+                                        <div class="file btn btn-lg col-6 ">
+                                            <label>
+                                                <img th:src="@{'/driverid'+${users.email}}" Id='one' alt=""
+                                                     class=" img-fluid">
+                                                Add Id
+                                                <input type="file" name="file" Id="imges"/>
+
+                                                <!--input type="file" name="images" required  accept="images/jpeg" -->
+                                            </label>
+                                        </div>
+                                        <div class="file btn btn-lg col-5" data-toggle="modal" data-target="#model1">
+                                            Change Password
+                                        </div>
+                                        <p>Bank Details</p>
+                                        <div class="form-group">
+                                            <label>
+                                                <input placeholder="Account No" type="text" tabindex="5" required=""
+                                                       autofocus="">
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>
+                                                <input placeholder="Account Name" type="text" tabindex="6" required=""
+                                                       autofocus="">
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>
+                                                <input placeholder="Bank Name" type="text" tabindex="6" required=""
+                                                       autofocus="">
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>
+                                                <input placeholder="Bank Branch" type="text" tabindex="6" required=""
+                                                       autofocus="">
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>
+                                                <input placeholder="Bank Code" type="text" tabindex="6" required=""
+                                                       autofocus="">
+                                            </label>
+                                        </div>
+
+
+                                        <div>
+                                            <input type="submit" value="Update">
+                                        </div>
+                                        <!--div class="sky-form">
+                                       <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>i agree to shoppe.com &nbsp;<a class="terms" th:href="#"> terms of service</a> </label>
+                                   </div-->
+                                    </form>
+                                    <!-- /Form --></div>
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div Id="model1" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
+                         aria-labelledby="mySmallModalLabel">
+                        <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" Id="exampleModalLabel">Change Password</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="registration_form">
+                                        <form th:action="@{#}">
+
+                                            <div class="form-group">
+                                                <label>
+                                                    <input placeholder="Enter old password" type="password" tabindex="4"
+                                                           required="">
+                                                </label>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>
+                                                    <input placeholder="Enter New password" type="password" tabindex="4"
+                                                           required="">
+                                                </label>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <input placeholder="retype new password" type="password" tabindex="4"
+                                                       required="">
+
+                                            </div>
+                                            <div class="form-group">
+
+                                                <input type="submit" class="btn-succes" value="submit">
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <th:block th:include="/driver/fragments/footer"></th:block>
+            <aside th:include="/driver/fragments/slidebar"></aside>
+        </div>
+    </div>
+</div>
+<th:block th:include="/driver/fragments/headerlink :: footer"></th:block>
+</body>
+</html>

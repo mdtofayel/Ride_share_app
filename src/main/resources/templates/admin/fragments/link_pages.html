@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<div th:fragment="link">
+<div class="row">
+    <div class="col-sm-8">
+        <a th:href="@{/admin/categories/showcategories}">Categories </a> |
+        <a th:href="@{/admin/compatableBrowsers/showBrowsers}">Compatible Browsers </a> |
+        <a th:href="@{/admin/compatiblewith/showcompatiblewith}">Compatible with </a> |
+        <a th:href="@{/admin/digitalItems/showdigitalitems}">Digital items </a> |
+        <a th:href="@{/admin/fileincluded/showfileincluded}">File Included </a> |
+        <a th:href="@{/admin/frameworks/showframework}">Frameworks </a> |
+        <a th:href="@{/admin/softwareversions/showsoftwareversion}">Software versions </a> |
+        <a th:href="@{/admin/support/showsupport}">Support </a> |
+        <a th:href="@{/admin/tags/showtags}">Tag</a>
+        <br/>
+        <br/>
+        <br/>
+    </div>
+
+    <div class="col-sm-4 text-right">
+        <a  class="btn btn-danger" th:href="@{/logout}"><i class="fa fa-sign-out"></i> Sign Out</a>
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>

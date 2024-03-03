@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>share Ride</title>
+    <th:block th:include="/rider/fragments/headerlink :: head"></th:block>
+</head>
+<div class="page-container">
+    <!--/content-inner-->
+    <div class="left-content">
+        <div class="inner-content">
+
+            <header th:include="/rider/fragments/header :: header"></header>
+            <div class="content">
+                <div class="women_main">
+                    <div class="container">
+
+                        <div class="registration">
+                            <div class="registration_left">
+                                <h2>Edit<span> Profile  </span></h2>
+
+                                <div class="registration_form">
+                                    <!-- Form -->
+                                    <form th:action="@{/rider/edit/save}" th:object="${riderProfile}" method="post" enctype="multipart/form-data">
+                                        <input type="hidden" th:field="${riderProfile.riderProfileId}">
+                                        <input name="redir_url" type="hidden" th:value="${current_url}"/>
+                                        <div class="form-group">
+
+                                            <img th:src="@{'/rider/image/'+${riderProfile.user.mobileNo}}" id='one1' alt=""
+                                                 class="img-circle img-fluid">
+                                            <div class="file btn btn-lg fa fa-plus-circle">
+                                                Change Photo
+                                                <input type="file" name="file" id="imge" th:value="${riderProfile.user.mobileNo}" class="form-control"
+                                                       onchange='frontview1(this);'/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>
+                                                <input placeholder="Full Name" type="text" tabindex="1" required=""
+                                                       autofocus="" th:field="*{riderFullname}">
+                                            </label>
+                                        </div>
+                                        <div class="sky_form1">
+                                            <level>Gender</level>
+
+                                                <li><label class="radio left">
+                                                    <input type="radio" name="gender" value="Male" th:field="*{gender}"><i></i>Male</label></li>
+                                                <li><label class="radio">
+                                                    <input type="radio" name="gender" value="Female" th:field="*{gender}"><i></i>Female</label>
+                                                </li>
+                                                <div class="clearfix"></div>
+
+                                        </div>
+                                        <!--  <div class="form-group">
+                                              <label>
+                                                  <input placeholder="Location" type="text" tabindex="2" required="" autofocus="">
+                                              </label>
+                                          </div>-->
+
+                                        <!-- <div class="form-group">
+                                             <label>
+                                                 <input placeholder="Address" type="text" tabindex="4" required="" autofocus="">
+                                             </label>
+                                         </div>-->
+                                        <!--<div class="form-group ">
+                                            <select name="countrycode" id="cc" required  class=" custom-select">
+                                                <option  value="a" disabled selected>Country</option>
+                                                <option  value="India +91">India </option>
+                                                <option  value="Qatar +974">Qatar </option>
+                                                <option  value="Bangladhesh ">Bangladhesh </option>
+                                                <option  value="USA">USA</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group ">
+                                            <select name="countrycode" id="cc" required  class=" custom-select">
+                                                <option  value="a" disabled selected>State/Division</option>
+                                                <option  value="India +91">Kerala</option>
+                                                <option  value="Qatar +974">Delhi</option>
+                                                <option  value="Bangladhesh ">Dhaka </option>
+                                                <option  value="USA">Doha</option>
+
+                                            </select>
+                                        </div>
+-->
+
+
+                                        <div>
+                                            <input type="submit" value="Update">
+                                        </div>
+                                        <!--div class="sky-form">
+                                       <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>i agree to shoppe.com &nbsp;<a class="terms" th:href="#"> terms of service</a> </label>
+                                   </div-->
+                                    </form>
+                                </div>
+                                <!-- /Form --></div>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div id="model1" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
+                     aria-labelledby="mySmallModalLabel">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="exampleModalLabel">Change Password</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="registration_form">
+                                    <form th:action="@{#}">
+
+                                        <div class="form-group">
+                                            <label>
+                                                <input placeholder="Enter old password" type="password" tabindex="4"
+                                                       required="">
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>
+                                                <input placeholder="Enter New password" type="password" tabindex="4"
+                                                       required="">
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <input placeholder="retype new password" type="password" tabindex="4"
+                                                   required="">
+
+                                        </div>
+                                        <div class="form-group">
+
+                                            <input type="submit" class="btn-succes" value="submit">
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <th:block th:include="/rider/fragments/footer"></th:block>
+        <aside th:include="/rider/fragments/slidebar"></aside>
+    </div>
+</div>
+</div>
+<th:block th:include="/rider/fragments/headerlink :: footer"></th:block>
+</body>
+</html>

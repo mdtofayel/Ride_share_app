@@ -1,0 +1,29 @@
+<aside class="main-sidebar" xmlns:th="http://www.thymeleaf.org">
+<!--slide bar-->
+<div class="sidebar-menu">
+    <header class="logo1">
+        <a th:href="@{#}" class="sidebar-icon"> <span class="fa fa-bars"></span> </a>
+    </header>
+    <div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
+    <div class="menu">
+        <ul id="menu" >
+            <li><a th:href="@{/drhome}"><i class="fa fa-home"></i><span>Home</span></a></li>
+            <li id="menu-academico" ><a th:href="@{/mytaxi}"><i class="fa fa-taxi"></i> <span> My Taxi's</span> <span></span></a>
+            </li>
+            <li id="menu-academico" ><a th:href="@{/mytrip}"><i class="fa fa-map-marker"></i> <span>Trip</span></a></li>
+            <li><a th:href="@{/myearning}"><i class="fa fa-money"></i><span>My Earning</span></a></li>
+            <li id="menu-academico" ><a th:href="@{/mywallet}"><i class="fa fa-list-alt"></i> <span>My Wallet</span></a></li>
+            <li id="menu-academico" ><a th:href="@{#}"><i class="fa fa-user-circle"></i> <span>My Profile</span><span class="fa fa-angle-right" style="float: right"></span></a>
+                <ul id="menu-academico-sub" >
+                    <li id="menu-academico-avaliacoes" ><a th:href="@{/editprofile}">Edit Profile</a></li>
+                    <li id="menu-academico-avaliacoes" ><a th:href="@{/edittaxi}">Edit Taxi</a></li>
+
+                </ul>
+            </li>
+            <li><a th:href="@{/logout}"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
+        </ul>
+    </div>
+</div>
+<div class="clearfix"></div>
+</aside>
+

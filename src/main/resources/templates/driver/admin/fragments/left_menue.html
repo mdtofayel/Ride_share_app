@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+
+<div th:fragment="left_menue">
+
+
+    <div class="col-xs-4">
+        <div class="settings_menu">
+            <h3>Your Details</h3>
+            <!--<ul>-->
+                <!--<li th:classappend="${#httpServletRequest.getRequestURI() == '/Openmarket/User/'+{user.userName}+'/personal_information/edit' ? 'active':''}">-->
+                    <!--<a th:href="@{'/User/'+${user.userName}+'/personal_information/edit'}">Personal Information</a></li>-->
+
+                <!--&lt;!&ndash;<li><a href="#">API Keys</a></li>&ndash;&gt;-->
+            <!--</ul>-->
+            <!--<h3>Author Tools</h3>-->
+            <ul>
+            <li><a href="#">Invoice and Credit Settings</a></li>
+            <li><a href="#">Item Support Settings</a></li>
+            <li><a href="#">Item Support Vacations</a></li>
+            <li><a href="#">Author Teams</a></li>
+            <li><a href="#">Taxt Information</a></li>
+            <li><a href="#">Taxt Summaries</a></li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

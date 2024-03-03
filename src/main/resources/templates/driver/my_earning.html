@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+    <title>share Ride</title>
+    <th:block th:include="/driver/fragments/headerlink :: head"></th:block>
+<!--<style>
+    .left-content{
+        min-height: 100vh;
+    }
+</style>-->
+</head>
+<div class="page-container">
+    <!--/content-inner-->
+    <div class="left-content">
+        <div class="inner-content">
+
+            <header th:include="/driver/fragments/header :: header"></header>
+<div class="content">
+    <div class="container">
+     <div class="women_main">
+
+    <h1 style="color:#B52E31 ">My <span style="color: #292b2c">Earning</span></h1>
+        <div class="search">
+
+     
+        <a th:href="@{#}">Recent Ride</a>
+        <a th:href="@{#}">Payment Request</a>
+        <a th:href="@{#}">Paid Trip</a>
+     
+      
+		
+</div> 
+         <div class="float-right search">
+										<form>
+											<input type="text" value=""  class="col-9 fa fa-search" placeholder="search..."><i class="fa fa-search"></i>
+										<!--	<input type="submit" value="" class="col-3 fa fa-search"><i class="fa fa-search"></i>-->
+										</form>
+									</div>
+   
+       	<table id="myTable" class="table table-hover table-responxive">
+<thead>
+    <tr>
+      <th scope="col" onclick="sortTable()" ondblclick="sortable()">Ride ID</th>
+     
+      <th scope="col">Trip Date</th>
+      <th scope="col">Fare</th>
+         <th scope="col">Commission</th>
+         <th scope="col">Tip</th>
+      <th scope="col">Payment</th>
+      <th scope="col">Payment Type</th>
+      <th scope="col">Invoice</th>
+    </tr>
+  </thead>
+  <tbody>
+       
+    <tr>
+      
+ <td>1</td>
+      <td>2/10/2018</td>
+        
+      <td>23$</td>
+             <td>$5</td>
+      <td>6$</td>
+      <td>24$</td>
+      <td>cash</td>
+      <td><a th:href="@{#}"><i class="fa fa-sticky-note"></i></a></td>
+        
+      
+    </tr>
+     <tr>
+      
+  <td>2</td>
+      <td>2/10/2018</td>
+        
+      <td>23$</td>
+             <td>$5</td>
+      <td>6$</td>
+      <td>24$</td>
+      <td>cash</td>
+      <td><a th:href="@{#}"><i class="fa fa-sticky-note"></i></a></td>
+        
+      
+    </tr>
+         <tr>
+      
+  <td>3</td>
+      <td>2/10/2018</td>
+        
+      <td>23$</td>
+             <td>$5</td>
+      <td>6$</td>
+      <td>24$</td>
+      <td>cash</td>
+      <td><a th:href="@{#}"><i class="fa fa-sticky-note"></i></a></td>
+        
+      
+    </tr>
+       <tr>
+       <td>4</td>
+ 
+      <td>2/10/2018</td>
+        
+      <td>23$</td>
+             <td>$5</td>
+      <td>6$</td>
+      <td>24$</td>
+      <td>cash</td>
+      <td><a th:href="@{#}"><i class="fa fa-sticky-note"></i></a></td>
+        
+      
+    </tr>
+         <tr>
+             <td>5</td>
+ 
+        <td>2/10/2018</td>
+        
+        <td>23$</td>
+        <td>$5</td>
+      <td>6$</td>
+      <td>24$</td>
+      <td>cash</td>
+      <td><a th:href="@{#}"><i class="fa fa-sticky-note"></i></a></td>
+        
+      
+    </tr>  <tr>
+       <td>6</td>
+ 
+      <td>2/10/2018</td>
+        
+      <td>23$</td>
+             <td>$5</td>
+      <td>6$</td>
+      <td>24$</td>
+      <td>cash</td>
+      <td><a th:href="@{#}"><i class="fa fa-sticky-note"></i></a></td>
+        
+      
+    </tr>   <tr>
+      
+  <td>7</td>
+      <td>2/10/2018</td>
+        
+      <td>23$</td>
+             <td>$5</td>
+      <td>6$</td>
+      <td>24$</td>
+      <td>cash</td>
+      <td><a th:href="@{#}"><i class="fa fa-sticky-note"></i></a></td>
+        
+      
+    </tr>   <tr>
+       <td>8</td>
+ 
+      <td>2/10/2018</td>
+        
+      <td>23$</td>
+             <td>$5</td>
+      <td>6$</td>
+      <td>24$</td>
+      <td>cash</td>
+      <td><a th:href="@{#}"><i class="fa fa-sticky-note"></i></a></td>
+        
+      
+    </tr>
+    
+  </tbody>
+</table> 
+        
+
+     </div>
+
+
+    </div>
+</div>
+            <th:block th:include="/driver/fragments/footer"></th:block>
+<aside th:include="/driver/fragments/slidebar"></aside>
+
+</div>
+
+</div>
+
+</div>
+
+<th:block th:include="/driver/fragments/headerlink :: footer"></th:block>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<header class="main-header" xmlns:th="http://www.thymeleaf.org">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="header_top">
+            <div class="top_right">
+                <ul>
+                    <li><a th:href="@{/index#about}">About Us</a></li>
+                    <li><a th:href="@{/index#contact}">Contact</a></li>
+                    <li><a th:href="@{/index#services}">Service</a></li>
+
+                </ul>
+
+            </div>
+            <div class="top_left">
+                <ul>
+                    <li><a th:href="@{/login}">LogIn</a></li>
+                    <li><a th:href="@{/registration}">Register</a></li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </nav>
+
+
+
+
+  <!--      <div class="wrapper fadeInDown">
+
+            <div id="formContent">
+                &lt;!&ndash; Tabs Titles &ndash;&gt;
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                &lt;!&ndash; Icon &ndash;&gt;
+                <div class="fadeIn first">
+                    <img src="images/logo.png" id="icon" alt="User Icon"/>
+                    <h1>Share Ride</h1>
+                </div>
+                <ul class="nav nav-tabs nav-justified" role="tablist">
+                    <li class="nav-item" role="presentation"><a class="nav-link  active" href="#profile"
+                                                                aria-controls="profile" role="tab" data-toggle="tab">Rider</a>
+                    </li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#home" aria-controls="home"
+                                                                role="tab" data-toggle="tab">Driver</a></li>
+
+                </ul>
+                &lt;!&ndash; <div class="tab-content">
+
+                     <div role="tabpanel" class="tab-pane active" id="profile">
+                         <h2>Login <span> Rider</span></h2>
+                         <form>
+                             <input type="text" id="login" class="fadeIn second" name="login" placeholder="Rider Mobile No">
+                             <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+                             <input type="submit" class="fadeIn fourth" value="Log In">
+                         </form>
+
+                     </div>
+                     <div role="tabpanel" class="tab-pane " id="home">
+                         <h2>Login <span> Driver </span></h2>
+                         <form>
+                             <input type="text" id="login" class="fadeIn second" name="login" placeholder="Driver Mobile No">
+                             <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+                             <input type="submit" class="fadeIn fourth" value="Log In">
+                         </form>
+
+                     </div>
+                     <a class="underlineHover" id="sign" th:href="@{/driveregistrationform}">Sign Up</a>
+                 </div>&ndash;&gt;
+
+                <div class="tab-content">
+
+                    <div role="tabpanel" class="tab-pane active" id="profile">
+                        <h2>Login <span> Rider</span></h2>
+                        <form th:action="@{/login}" method="POST">
+                            <input type="text" id="login" class="fadeIn second" name="mob" placeholder="Phone number">
+                            <input type="password" id="password" class="fadeIn third" name="password"
+                                   th:placeholder="Password">
+                            <input type="submit" class="fadeIn fourth" value="Log In" name="rider">
+                            <div align="center" th:if="${param.error}">
+                                <p style="font-size: 12px; color: #FF1C19;">Email or Password invalid, please verify</p>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane " id="home">
+                        <h2>Login <span> Driver </span></h2>
+                        <form th:action="@{/login}" method="POST">
+                            <input type="text" id="login" class="fadeIn second" name="email" placeholder="Phone number">
+                            <input type="password" id="password" class="fadeIn third" name="password"
+                                   th:placeholder="Password">
+                            <input type="submit" class="fadeIn fourth" value="Log In">
+                            <div align="center" th:if="${param.error}">
+                                <p style="font-size: 12px; color: #FF1C19;">Phone number or Password invalid, please
+                                    verify</p>
+                            </div>
+                        </form>
+
+                    </div>
+                    <a class="underlineHover" id="sign" th:href="@{/driveregistrationform}">Sign Up</a>
+                </div>
+                &lt;!&ndash; Login Form &ndash;&gt;
+
+                &lt;!&ndash; Remind Passowrd &ndash;&gt;
+                <div id="formFooter">
+                    <a class="underlineHover" th:href="@{/index}">Go to Home</a>
+                </div>
+
+            </div>
+        </div>
+-->
+
+
+    <!--    <div class="header-section">
+            &lt;!&ndash; top_bg &ndash;&gt;
+            <div class="top_bg">
+
+                <div class="header_top">
+                    <div class="top_right">
+                        <ul>
+                            <li><a th:href="@{/index#about}">About Us</a></li>
+                            <li><a th:href="@{/index#contact}">Contact</a></li>
+                            <li><a th:href="@{/index#services}">services</a></li>
+                            <li><a th:href="@{/login1}">LogIN</a></li>
+                            <li><a th:href="@{/driveregistrationform}">Register</a></li>
+                            &lt;!&ndash;li><a th:href="@{checkout.html}">Delivery information</a></li&ndash;&gt;
+                        </ul>
+                    </div>
+
+
+                            &lt;!&ndash;li><a th:href="@{checkout.html}">Delivery information</a></li&ndash;&gt;
+
+                    <div class="clearfix"> </div>
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+            &lt;!&ndash; /top_bg &ndash;&gt;
+        </div>-->
+</header>

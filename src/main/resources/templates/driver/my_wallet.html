@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>share Ride</title>
+    <th:block th:include="/driver/fragments/headerlink :: head"></th:block>
+</head>
+<div class="page-container">
+    <!--/content-inner-->
+    <div class="left-content">
+        <div class="inner-content">
+
+            <header th:include="/driver/fragments/header :: header"></header>
+<div class="content">
+     <div class="women_main">
+         <div class="container">
+    <h1 style="color:#B52E31 ">My <span style="color: #292b2c">Wallet</span></h1>
+        <div class="search">
+   <p>Search Entire Date</p>
+        <a class="border-left" th:href="@{#}">today</a>
+        <a th:href="@{#}">Yesterday</a>
+        <a th:href="@{#}">Current Week</a>
+        <a th:href="@{#}">Previous Week</a>
+        <a th:href="@{#}">Current Month</a>
+        <a th:href="@{#}">Previous Month</a>
+      
+		<div class="form-group row" style="margin-top: 2%;">
+			
+			<div class="col-sm-4 ctl">
+					<form>
+					<input type="date" value="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Select date';}">
+                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+				</form>
+			</div>
+            <div class="col-sm-4 ctl">
+					<form>
+					<input type="date" value="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Select date';}" class="fas fa-calendar-alt" >
+                   
+				</form>
+			</div>
+			<button class=" btn-primary">Search</button>
+			<div class="clearfix"></div>
+		</div>
+</div>
+     <button onclick="sortTable()">Sort</button> 
+        <button onclick="sortable()">Sort</button>   
+       	<table id="myTable" class="table table-hover table-responxive">
+<thead>
+    <tr>
+      <th scope="col" onclick="sortTable()" ondblclick="sortable()">Discription</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Balance For</th>
+      <th scope="col">Transaction DAte</th>
+      <th scope="col">Type</th>
+      <th scope="col">Balance</th>
+    </tr>
+  </thead>
+  <tbody>
+       
+    <tr>				
+      
+      <td>Debited for Trip 72665734</td>
+      <td>$ 0.62</td>
+      <td>Withdrawal</td>
+      <td>9th February, 2018</td>
+      <td>Debit</td>
+      <td>$ 10142.33</td>
+        
+      
+    </tr>
+      <tr>
+     					
+      <td> Amount credited</td>
+      <td>$ 100.00</td>
+      <td>Deposit</td>
+      <td>8th March, 2018</td>
+      <td>Credit</td>
+      <td>$ 10290.87</td>
+        
+      
+    </tr>
+       <tr>				
+      
+      <td>Debited for Trip 72665734</td>
+      <td>$ 0.62</td>
+      <td>Withdrawal</td>
+      <td>9th February, 2018</td>
+      <td>Debit</td>
+      <td>$ 10142.33</td>
+        
+      
+    </tr>
+         <tr>				
+      
+      <td>Debited for Trip 72665734</td>
+      <td>$ 0.62</td>
+      <td>Withdrawal</td>
+      <td>9th February, 2018</td>
+      <td>Debit</td>
+      <td>$ 10142.33</td>
+        
+      
+    </tr>
+        <tr>
+     					
+      <td> Amount credited</td>
+      <td>$ 100.00</td>
+      <td>Deposit</td>
+      <td>8th March, 2018</td>
+      <td>Credit</td>
+      <td>$ 10290.87</td>
+        
+      
+    </tr>    
+      <tr>				
+      
+      <td>Debited for Trip 72665734</td>
+      <td>$ 0.62</td>
+      <td>Withdrawal</td>
+      <td>9th February, 2018</td>
+      <td>Debit</td>
+      <td>$ 10142.33</td>
+        
+      
+    </tr>   <tr>				
+      
+      <td>Debited for Trip 72665734</td>
+      <td>$ 0.62</td>
+      <td>Withdrawal</td>
+      <td>9th February, 2018</td>
+      <td>Debit</td>
+      <td>$ 10142.33</td>
+        
+      
+    <tr>
+     					
+      <td> Amount credited</td>
+      <td>$ 100.00</td>
+      <td>Deposit</td>
+      <td>8th March, 2018</td>
+      <td>Credit</td>
+      <td>$ 10290.87</td>
+        
+      
+    </tr>
+    
+  </tbody>
+</table> 
+        
+ </div>
+     </div>
+</div>
+            <th:block th:include="/driver/fragments/footer"></th:block>
+
+            <aside th:include="/driver/fragments/slidebar"></aside>
+        </div>
+    </div>
+</div>
+<th:block th:include="/driver/fragments/headerlink :: footer"></th:block>
+</body>
+</html>

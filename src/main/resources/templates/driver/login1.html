@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>share Ride</title>
+    <th:block th:include="/driver/fragments/headerlink :: head"></th:block>
+</head>
+<style>
+    .nav-item a {
+        color: #0c0c0c;
+    }
+    .nav-tabs{
+ display: block;
+        background-color: black;
+        padding-top: 12px;
+        padding-bottom: 11px;
+    }
+    .hea{
+        color: #FFFFFF;
+    }
+</style>
+<body>
+<div class="wrapper fadeInDown">
+
+    <div id="formContent">
+        <div class="fadeIn first">
+           <!-- <img src="images" id="icon" alt="User Icon"/>-->
+            <h1>Share Ride</h1>
+        </div>
+        <ul  class="nav nav-tabs nav-justified" role="tablist">
+            <li class=" hea"><h2 class="text-center">Login </h2></li>
+        </ul>
+        <div class="tab-content">
+<br>
+            <div role="tabpanel" class="tab-pane active" id="profile">
+
+                <form th:action="@{/login}" method="POST">
+                    <input type="text" id="login" class="fadeIn second" name="mobileNo" placeholder="Phone number">
+                    <input type="password" id="password" class="fadeIn third" name="password"
+                           th:placeholder="Password">
+                    <input type="submit" class="fadeIn fourth" value="Log In" name="rider">
+                </form>
+
+
+            <a class="underlineHover" id="sign" th:href="@{/registration}">Sign Up</a>
+        </div>
+
+        <div id="formFooter">
+            <a class="underlineHover" th:href="@{/}">Go to Home</a>
+        </div>
+
+    </div>
+</div>
+<th:block th:include="/driver/fragments/headerlink :: footer"></th:block>
+</body>
+</html>

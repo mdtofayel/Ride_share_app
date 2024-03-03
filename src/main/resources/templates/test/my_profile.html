@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>share Ride</title>
+	<th:block th:include="fragments/headerlink :: head"></th:block>
+</head>
+<div class="page-container">
+	<!--/content-inner-->
+	<div class="left-content">
+		<div class="inner-content">
+
+			<header th:include="/fragments/header :: header"></header>
+			<div class="content">
+				<div class="women_main">
+					<div class="container">
+						<div class="row">
+							<!-- /Profile -->
+							<div class="col-3 abc">
+								<img th:src="@{'/driverimage'+${users.getDriverId}}" Id='one' alt=""  class=" img-fluid">
+								<div class="file btn btn-lg fa fa-plus-circle ">
+									Change Photo
+									<input type="file" name="file" Id="imge"  onchange='frontview(this);'/>
+								</div>
+
+							</div>
+							<div class="col-8 ">
+								<blockquote>
+									<h2>ABC</h2>
+									<small><cite title="Source Title">Doha Qatar  </cite></small>
+								</blockquote>
+								<p>
+									<i class="fa fa-mobile"></i> masterwayne@batman.com <br>
+									Najma <br>
+									Doha
+								</p>
+
+
+								<h3><i class="fa fa-university" data-toggle="collapse" data-target="#demo"></i></h3>
+								<div Id="demo" class="collapse">
+									<div class="product-title">Bank Account</div>
+									<hr>
+									<div class="product-desc border border-bottom-0">Account No</div>
+									<div class="product-desc border">Account NAme</div>
+									<div class="product-desc border">Bank Name</div>
+									<div class="product-desc border">Bank Location</div>
+									<div class="product-desc border">IFSC Code</div>
+
+
+
+								</div>
+								<hr>
+
+								<a th:href="@{/editprofile}" class="float-right"><button class="btn btn-primary ">edit</button></a>
+
+							</div>
+
+
+						</div>
+
+						<div class="row padding">
+							<div class="col-sm-4 col-xs-6">
+								<div class="thumbnail">
+									<div class="frow">
+										<div class="file btn btn-lg ">
+											Update
+											<input type="file" name="file" Id="imges"  onchange='fontview(this);'/>
+										</div>
+
+
+									</div>
+									<div class="secrow abc">
+										<div class="caption">
+											licence
+										</div>
+										<img th:src="@{/images/licen.jpg}" alt="" Id="two" class="img-fluid">
+									</div>
+
+
+								</div>
+							</div>
+							<div class="col-sm-4 col-xs-6">
+								<div class="thumbnail">
+									<div class="frow">
+										<div class="file btn btn-lg ">
+											Update
+											<input type="file" name="file" Id="imges"  onchange='fntview(this);'/>
+										</div>
+
+
+									</div>
+									<div class="secrow abc">
+										<div class="caption">
+											Insure
+										</div>
+										<img th:src="@{/images/incr.jpg}" alt="" Id="three" class="img-fluid">
+									</div>
+
+
+								</div>
+							</div>
+							<div class="col-sm-4 col-xs-6">
+								<div class="thumbnail">
+									<div class="frow">
+										<div class="file btn btn-lg ">
+											Update
+											<input type="file" name="file" Id="imges"  onchange='ftview(this);'/>
+										</div>
+
+
+									</div>
+									<div class="secrow abc">
+										<div class="caption">
+											Car
+										</div>
+										<img th:src="@{/images/car.png}" alt="" Id="four" class="img-fluid">
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+
+
+				</div>
+
+
+			</div>
+			<th:block th:include="fragments/footer"></th:block>
+			<aside th:include="/fragments/slidebar"></aside>
+		</div>
+	</div>
+</div>
+<th:block th:include="/fragments/headerlink :: footer"></th:block>
+</body>
+</html>
+
+
+
+
+
+
+
+ 
+
+
+  
+  
+
+
+
+
+  

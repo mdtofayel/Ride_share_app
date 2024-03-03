@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>share Ride</title>
+    <th:block th:include="fragments/headerlink :: head"></th:block>
+</head>
+<div class="page-container">
+    <!--/content-inner-->
+    <div class="left-content">
+        <div class="inner-content">
+
+            <header th:include="/fragments/header :: header"></header>
+            <!-- //header-ends -->
+            <div class="content">
+                <div class="women_main">
+                    <!-- start content -->
+                    <div class="catalog ">
+                        <div Id="tabs" class="tabs">
+
+                            <div class="graph">
+                                <nav class="text-center">
+                                    <h1 style="color:#B52E31 ">My <span style="color: #292b2c">Taxi's</span></h1>
+
+                                </nav>
+                                <div class="content tab">
+
+                                    <!-- start content -->
+                                    <div class="registration">
+                                        <div class="registration_left mx-auto d-block">
+                                            <h2>Edit<span> Taxi  </span></h2>
+
+                                            <div class="registration_form">
+                                                <!-- Form -->
+                                                <form role="form" th:action="@{/savetaxi}"
+                                                      th:object="${vehicleInfo}" method="post">
+                                                    <input type="hidden" th:field="*{vehicleId}">
+                                                    <div class="form-group">
+                                                        <label>Vehicle Number </label>
+                                                        <input class="form-control" placeholder="Vehicle Number"
+                                                               type="text" tabindex="1" required="" autofocus=""
+                                                               th:field="*{vehicleNo}">
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Vehicle Model </label>
+                                                        <input class="form-control" placeholder="Vehicle Model:"
+                                                               type="text" tabindex="2" required="" autofocus=""
+                                                               th:field="*{vehicleModel}">
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Manufacture Company </label>
+                                                        <input class="form-control" placeholder="Manufacture Company"
+                                                               type="text" tabindex="3" required="" autofocus=""
+                                                               th:field="*{vehicleManufacCompany}">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Manufacture Year </label>
+                                                        <input class="form-control" placeholder="Manufacture Year"
+                                                               type="text" tabindex="4" required="" autofocus=""
+                                                               th:field="*{vehicleManufacYear}">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Ownder Id</label>
+                                                        <input class="form-control" placeholder="Owner Id" type="text"
+                                                               tabindex="5" required="" autofocus=""
+                                                               th:field="*{ownerNidNo}">
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>RC Number</label>
+                                                        <input class="form-control" placeholder="RC Number" type="text"
+                                                               tabindex="6" required="" autofocus="" th:field="*{rcNo}">
+
+                                                    </div>
+                                                    <div class="file btn btn-lg ">
+                                                        <label>
+
+                                                            Add car
+                                                            <input type="file" name="file" Id="imges"/>
+
+                                                            <!--input type="file" name="images" required  accept="images/jpeg" -->
+                                                        </label>
+                                                    </div>
+                                                    <div class="file btn btn-lg ">
+                                                        <label>
+
+                                                            Add Incurance
+                                                            <input type="file" name="file" Id="imges"/>
+
+                                                            <!--input type="file" name="images" required  accept="images/jpeg" -->
+                                                        </label>
+                                                    </div>
+                                                    <div class="file btn btn-lg ">
+                                                        <label>
+
+                                                            Add Isthimar
+                                                            <input type="file" name="file" Id="imges"/>
+
+                                                            <!--input type="file" name="images" required  accept="images/jpeg" -->
+                                                        </label>
+                                                    </div>
+
+                                                    <div>
+                                                        <input type="submit" value="Update">
+                                                    </div>
+
+                                                </form>
+                                                <!-- /Form --></div>
+                                        </div>
+
+                                        <div class="clearfix"></div>
+                                    </div>
+
+
+                                </div><!-- /content -->
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <th:block th:include="fragments/footer"></th:block>
+            <aside th:include="/fragments/slidebar"></aside>
+        </div>
+    </div>
+</div>
+<th:block th:include="/fragments/headerlink :: footer"></th:block>
+</body>
+</html>
+
+

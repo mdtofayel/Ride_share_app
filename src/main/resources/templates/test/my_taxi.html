@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>share Ride</title>
+    <th:block th:include="fragments/headerlink :: head"></th:block>
+</head>
+
+<body>
+<div class="page-container">
+    <!--/content-inner-->
+    <div class="left-content">
+        <div class="inner-content">
+
+            <header th:include="/fragments/header :: header"></header>
+            <div class="content">
+                <div class="women_main">
+                    <!-- start content -->
+                    <div class="container">
+                        <div class="catalog">
+                            <div Id="tabs" class="tabs">
+
+                                <div class="graph">
+                                    <nav>
+                                        <!--<h1 style="color:#B52E31 ">My <span style="color: #292b2c">Taxi's</span> <span
+                                                style="font-size: 20px;"><a th:href="@{'/edittaxi/'+${vehicleInfo.vehicleId}}" class="pull-right">Edit</a></span>
+                                        </h1>-->
+                                       <!-- <td><a th:href="@{'/Admin/theme/update/'+${listOfBadges.Id}}"
+                                               th:field="*{name}" class="btn btn-default"><i class="fa fa-edit"></i> edit</a> &nbsp; <a
+                                                th:href="@{'/Admin/theme/delete/'+${listOfBadges.Id}}"
+                                                class="btn btn-default" onclick="return confirm('Are you sure to delte this?')"><i class="fa fa-trash-o"></i> delete</a></td>
+-->
+                                    </nav>
+                                    <div class="content tab">
+                                        <section Id="section-1" class="content-current">
+
+                                            <div class="jumbrotan">
+                                                <!--<table class="table table-hover">
+
+                                      <tbody>
+                                        <tr>
+
+                                          <td>Audi</td>
+                                          <td>Qatar 1234</td>
+                                          <td><button type="button" class="btn btn-outline-success">Active</button></td>
+
+                                           <td><ul Id="men"><li><a th:href="@{#}"><i class="fa fa-cog"></i></a>
+                                                                               <ul  >
+                                                                               <li ><a th:href="@{/edittaxi}" data-toggle="tooltip" title="edit"><i class="fa fa-pencil"></i> </a></li>
+                                                                                <li  ><a data-toggle="tooltip" title="Active"><i class="fa fa-check-circle"></i></a></li>
+                                                                                <li ><a data-toggle="tooltip" title="DeActive"><i class="fa fa-times-circle"></i></a></li>
+                                                                              </ul>
+                                                                            </li></ul></td>
+
+
+                                        </tr>
+                                        <tr>
+
+                                          <td>Audi</td>
+                                          <td>Qatar 1234</td>
+                                          <td><button type="button" class="btn btn-outline-success">Active</button></td>
+
+                                           <td><ul Id="men"><li><a th:href="@{#}"><i class="fa fa-cog"></i></a>
+                                                                               <ul  >
+                                                                               <li ><a th:href="@{/edittaxi}" data-toggle="tooltip" title="edit"><i class="fa fa-pencil"></i> </a></li>
+                                                                                <li  ><a data-toggle="tooltip" title="Active"><i class="fa fa-check-circle"></i></a></li>
+                                                                                <li ><a data-toggle="tooltip" title="DeActive" ><i class="fa fa-times-circle"></i></a></li>
+                                                                              </ul>
+                                                                            </li></ul></td>
+
+
+                                        </tr>
+                                        <tr>
+
+                                          <td>Audi</td>
+                                          <td>Qatar 1234</td>
+                                          <td><button type="button" class="btn btn-outline-success">Active</button></td>
+
+                                           <td><ul Id="men"><li><a th:href="@{#}"><i class="fa fa-cog"></i></a>
+                                                                               <ul  >
+                                                                               <li ><a th:href="@{/edittaxi}" data-toggle="tooltip" title="edit"><i class="fa fa-pencil"></i> </a></li>
+                                                                                <li  ><a data-toggle="tooltip" title="Active" ><i class="fa fa-check-circle"></i></a></li>
+                                                                                <li ><a data-toggle="tooltip" title="DeActive" ><i class="fa fa-times-circle"></i></a></li>
+                                                                              </ul>
+                                                                            </li></ul></td>
+
+
+                                        </tr>
+
+                                      </tbody>
+                                    </table>-->
+
+                                                <div class="row">
+                                                    <!-- /Profile -->
+                                                    <div class="col-3">
+                                                        <img th:src='@{/images/back16.jpg}' Id='one' alt=""
+                                                             class=" img-fluid">
+
+                                                    </div>
+                                                    <div class="col-6 ">
+                                                        <blockquote>
+                                                            <h2 th:text="${vehicleInfo.vehicleModel}">Model Name: </h2>
+
+                                                        </blockquote>
+                                                        <p th:text="${vehicleInfo.vehicleManufacCompany}">Company Name:  <br></p>
+                                                        <p th:text="${vehicleInfo.vehicleManufacYear}">Manufacture Year: <br></p>
+                                                        <p th:text="${vehicleInfo.vehicleNo}">Vehicle No: <br></p>
+                                                         <p th:text="${vehicleInfo.rcNo}">Istimar No:
+                                                        </p>
+
+
+                                                    </div>
+                                                    <div class="col-3">
+
+
+                                                        <div class="secrow">
+                                                            <div class="caption">
+                                                                Insure
+                                                            </div>
+                                                            <img th:src="@{/images/incr.jpg}" alt="" Id="three"
+                                                                 class="img-fluid">
+                                                        </div>
+
+
+                                                    </div>
+                                                    <hr>
+
+
+                                                </div>
+
+</div>
+
+
+
+
+
+
+
+                                    </section>
+
+
+                                </div><!-- /content -->
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+            <th:block th:include="fragments/footer"></th:block>
+        <aside th:include="/fragments/slidebar"></aside>
+
+    </div>
+
+</div>
+</div>
+0
+<th:block th:include="/fragments/headerlink :: footer"></th:block>
+</body>
+</html>

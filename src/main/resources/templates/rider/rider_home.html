@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>share Ride</title>
+    <th:block th:include="/rider/fragments/headerlink :: head"></th:block>
+<style>
+#bx{
+    background: #f2f2f2;
+    font-family: 'Josefin Sans', sans-serif;
+}
+   #ro .profile
+    {
+        min-height: 355px;
+        display: inline-block;
+    }
+   #ro figcaption.ratings
+    {
+        margin-top:20px;
+    }
+   #ro figcaption.ratings a
+    {
+        color:#f1c40f;
+        font-size:11px;
+    }
+   #ro figcaption.ratings a:hover
+    {
+        color:#f39c12;
+        text-decoration:none;
+    }
+
+</style>
+</head>
+<div class="page-container">
+    <!--/content-inner-->
+    <div class="left-content">
+        <div class="inner-content">
+
+            <header th:include="/rider/fragments/header :: header"></header>
+            <div class="content">
+                <div class="women_main">
+                    <div class="container">
+                        <div  class="row">
+                                <div id="ro" class="profile">
+                                    <div class="col-sm-12 col-lg-12 col-md-12 row ">
+                                        <div class="col-xs-12 col-sm-4 col-lg-4 col-md-4 text-center">
+                                            <figure>
+                                                <img th:src="@{'/rider/image/'+${riderProfile.user.mobileNo}}"  id='one' alt="" class=" img-fluid">
+                                                <figcaption class="ratings">
+                                                    <p>Ratings
+                                                        <a href="#">
+                                                            <span class="fa fa-star"></span>
+                                                        </a>
+                                                        <a href="#">
+                                                            <span class="fa fa-star"></span>
+                                                        </a>
+                                                        <a href="#">
+                                                            <span class="fa fa-star"></span>
+                                                        </a>
+                                                        <a href="#">
+                                                            <span class="fa fa-star"></span>
+                                                        </a>
+                                                        <a href="#">
+                                                            <span class="fa fa-star-o"></span>
+                                                        </a>
+                                                    </p>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                        <div class="col-lg-8 col-md-8 col-xs-12 col-sm-8">
+                                            <h2 th:text="${riderProfile.riderFullname}">Mohammad Tofayel Ahmed</h2>
+                                            <p th:text="${riderProfile.user.mobileNo}" ><strong th:text="${riderProfile.gender}">About: </strong>  </p>
+
+                                            <a th:href="@{'/rider/rideredit/'+${riderProfile.user.userId}}" ><button class="btn btn-warning btn-sm pull-right">Edit</button></a>
+                                        </div>
+
+                                    </div>
+                                    <hr class="hr100">
+
+                                </div>
+
+                        </div>
+
+                            <div class="container">
+                                <div  class="row">
+
+                                    <div id="bx" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+                                        <div class="box-part text-center">
+
+                                            <i class="fa fa-lock fa-3x" aria-hidden="true"></i>
+
+                                            <div class="title">
+                                                <h3>Password</h3>
+                                            </div>
+
+                                            <div class="text">
+                                                <password>******</password>
+                                            </div>
+
+                                            <a href="#" data-toggle="modal" data-target="#model">Change Password</a>
+
+                                        </div>
+                                    </div>
+
+                                    <div id="model" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                                        <div class="modal-dialog modal-sm" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="exampleModalLabel">Change Password</h4>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <div class="form-group">
+
+                                                        <form  th:action="@{/rider/password/change}" th:object="${riderProfile}" method="post">
+                                                            <input type="text" class="form-control"  hidden th:field="${riderProfile.riderProfileId}">
+                                                            <input type="text" class="form-control"  hidden th:field="${riderProfile.riderFullname}">
+                                                            <div class="form-group">
+                                                                <label for="ppass" >Previous Password </label>
+                                                                <input type="password" required class="form-control"  th:name="prevPasss" id="ppass" placeholder="Enter Previous Password">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="npass" >New Password </label>
+                                                                <input type="password" th:name="newPasss" required class="form-control" id="npass" placeholder="Enter New Password">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="rpass" >Retype Password </label>
+                                                                <input type="password" required class="form-control" id="rpass" placeholder="Confirm Password" th:name="confirmPass">
+                                                            </div>
+                                                            <input type="submit" class="btn btn-primary" value="Change">
+                                                        </form>
+                                                    </div>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div  id="bx" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+                                        <div class="box-part text-center">
+
+                                            <i class="fa fa-mobile fa-3x" aria-hidden="true"></i>
+
+                                            <div class="title">
+                                                <h3>Mobile No</h3>
+                                            </div>
+
+                                            <div class="text">
+                                                <span th:text="${riderProfile.user.mobileNo}"></span>
+                                            </div>
+
+                                            <a href="#" data-toggle="modal" data-target="#model1">Edit</a>
+
+                                        </div>
+                                    </div>
+
+                                    <div id="model1" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                                        <div class="modal-dialog modal-sm" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="exampleModalLabel">Change
+                                                    Mobile Number</h4>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                                                </div>
+                                                <div class="modal-body">
+
+
+                                                        <form>
+
+                                                           <!--     <label for="number">Enter New Number</label>-->
+                                                                <div class="form-group">
+                                                                    <select name="countrycode" id="cc" required  class=" custom-select">
+                                                                        <option  value="a" disabled selected>Country code</option>
+                                                                        <option  value="India +91">India +91</option>
+                                                                        <option  value="Qatar +974">Qatar +974</option>
+                                                                        <option  value="Bangladhesh ">Bangladhesh </option>
+                                                                        <option  value="USA">USA</option>
+
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                <input type="text" class="form-control" id="no" required placeholder="Enter New Number">
+                                                                </div>
+
+                                                            <div class="form-group">
+                                                                <label for="number">Enter OTP </label>
+                                                                <input type="password" class="form-control" id="otp" placeholder="Enter OTP">
+                                                            </div>
+
+                                                            <input type="submit" class="btn btn-primary" required value="Change">
+                                                        </form>
+                                                    </div>
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                     <!--   <div class="row padding">
+                            <div class="col-sm-4 col-xs-6">
+                                <div class="thumbnail">
+                                    <div class="frow">
+
+
+
+                                    </div>
+                                    <div class="secrow">
+                                        <div class="caption">
+                                            licence
+                                        </div>
+                                        <h5><i class=""></i> </h5>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-6">
+                                <div class="thumbnail">
+                                    <div class="frow">
+
+
+
+                                    </div>
+                                    <div class="secrow">
+                                        <div class="caption">
+                                            Insure
+                                        </div>
+                                        <img th:src="@{/images/incr.jpg}" alt="" id="three" class="img-fluid">
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-6">
+                                <div class="thumbnail">
+                                    <div class="frow">
+
+
+
+                                    </div>
+                                    <div class="secrow">
+                                        <div class="caption">
+                                            Car
+                                        </div>
+                                        <img th:src="@{/images/car.png}" alt="" id="four" class="img-fluid">
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                    <hr>
+
+
+                </div>
+
+
+            </div>
+            <th:block th:include="/rider/fragments/footer"></th:block>
+            <aside th:include="/rider/fragments/slidebar"></aside>
+        </div>
+    </div>
+</div>
+<th:block th:include="/rider/fragments/headerlink :: footer"></th:block>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>share Ride</title>
+    <block th:include="/driver/fragments/headerlink :: head"></block>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
+<style>
+
+</style>
+</head>
+<body data-spy="scroll" data-target="#navbar" data-offset="50">
+<header th:include="/driver/fragments/indexheader"></header>
+<div class="page-container">
+    <!--/content-inner-->
+ <!--   <div class="left-content">-->
+      <!--  <div class="inner-content">-->
+
+
+            <div class="cos">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img th:src="@{/images/back11.jpg}"class="img-fluid" alt="First slide">
+                            <div class="carousel-caption">
+                                <h1 class="section-heading ">
+                                    YOUR FAVORITE RIDE WITH US</h1>
+                                <p class="text-faded mb-4">
+                                    The smart way of travelling, all with your smart phone and three little taps. Tap and look for your ride, Tap and book your ride and Tap and complete your ride. Your tap brings the driver to you for the best riding experience of your life, each one better than the previous one.
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel-caption">
+                                <h1 class="section-heading ">
+                                    ركوب المفضلة معنا</h1>
+                                <p class="text-faded text-white">
+                                    الطريقة الذكية للسفر ، كل ذلك مع هاتفك الذكي وثلاث نقرات صغيرة. اضغط وابحث عن رحلتك ، انقر على وحجز رحلتك وانقر على وإكمال رحلتك. تقوم الصنبور بجلب السائق إليك للحصول على أفضل تجربة ركوب في حياتك ، كل واحدة أفضل من سابقتها.
+
+                                </p>
+                            </div>
+                            <img th:src="@{/images/back16.jpg}" class="img-fluid" alt="Second slide">
+
+                        </div>
+                        <div class="item">
+                            <img th:src="@{/images/back15.png}" class="img-fluid" alt="Third slide">
+                            <div class="carousel-caption">
+                                <h1  class="section-heading ">எங்களைப் பற்றி உங்களுக்குத் தெரிந்த ரைட்ு</h1>
+                                <p class="text-faded text-white">
+                                    பயணம் செய்யும் ஸ்மார்ட் வழி, அனைவருக்கும் உங்கள் ஸ்மார்ட் போன் மற்றும் மூன்று சிறிய டாப்ஸ். தட்டவும் உங்கள் சவாரிக்காகவும் பார்க்கவும், தட்டவும் உங்கள் சவாரி மற்றும் தட்டவும் தட்டவும் உங்கள் சவாலை முடிக்கவும். உங்கள் குழுவானது உங்கள் வாழ்க்கையின் சிறந்த சவாரி அனுபவத்திற்காக உங்களுடன் இயக்கி வருகின்றது, ஒவ்வொன்றும் முந்தையதைவிட சிறந்தது.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" th:href="@{#carousel-example-generic}" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span></a>
+                    <a class="right carousel-control"
+                       th:href="@{#carousel-example-generic}" data-slide="next"><span class="glyphicon glyphicon-chevron-right">
+                        </span></a>
+                </div>
+
+
+            </div>
+          <!--  <div class="women_main">-->
+
+
+
+
+
+
+
+
+                <section class="" id="about" >
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto text-center">
+                                <h2 class="section-heading">About Us</h2>
+                                <hr class="my-4">
+                                <h2 class="section-heading ">We've got what you need!</h2>
+
+                                <p class="text-faded mb-4 text-dark">No hassles of direction giving as your driver know exactly where you want to go. Payment completed via your credit card. Just sit back and enjoy your ride!</p>
+                                <a class="btn btn-light btn-xl js-scroll-trigger" href="driver_registration_form.html">Get Register!</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="services">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <h2 class="section-heading">Our Service</h2>
+                                <hr class="my-4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-lg-6 col-md-6 text-center">
+                                <div class="service-box mt-5 mx-auto">
+                                    <img th:src="@{/images/service2.jpg}" class="img-fluid">
+                                    <h3 class="mb-3">Luxury At Your Doorstep At Your Choice</h3>
+                                    <p class="text-muted mb-0">Budgeted or luxury, we will have the ride of your choice. Go shopping in a mini and enjoy a limousine ride to your office party. Be spoilt for choice!</p>
+                                    <p class="text-muted mb-0">Make your travelling experience a memorable one, we bring you the best on-demand cabbing experience. Pure comfort, luxury and style – the ultimate dream ride!</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 text-center">
+                                <div class="service-box mt-5 mx-auto">
+                                    <img th:src="@{images/service3.jpg}" class="img-fluid">
+                                    <h3 class="mb-3">Just For You, Just Like You</h3>
+                                    <p class="text-muted mb-0">Ordinary people just like you and me are driving you places. Any city, big or small, any profession high paying or manual, whatever you do, wherever you are, can drive for us. From homemakers to students, from engineers to teachers, is all part of our driving family!</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 text-center">
+                                <div class="service-box mt-5 mx-auto">
+                                    <img th:src="@{/images/service.jpg}" class="img-fluid">
+                                    <h3 class="mb-3">Ever Ready, Anytime, Anywhere, Everyday</h3>
+                                    <p class="text-muted mb-0">Wherever you want to go, irrespective of time, date and place, we are always ready. No waiting charges, no reservations, just our professionalism and courteous service.</p>
+                                    <p class="text-muted mb-0">At your service 24/7, we take pride in what we do and it reflects in our driving. Building a relationship with clients that goes beyond professionalism.</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <section id="app" class="text-white">
+                    <div class="container text-center">
+                        <div class="row">
+                            <img th:src="@{/images/andr.png}"  class="col-lg-6 img-fluid">
+                            <div class="col-lg-6">
+                                <h2 class="mb-4" style="color: #0c0c0c;">THAT PERFECTLY SYNCHRONISED RIDE JUST FOR YOU</h2>
+                                <p class="text-muted mb-0">Tap the app, select a driver, get to your destination without looking back. That is what our app will do. No words are necessary when you ride with us because we know exactly what you want. Ride and save with us – luxury cannot get any cheaper.</p>
+                                <a class="btn btn-light btn-xl sr-button" href="#">Download Now!</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section  id="map1">
+                    <div class="container">
+                        <div class="row text-center">
+                            <div class="col-lg-6">
+                                <h2 class="mb-4">Fair Estimation</h2>
+
+                            </div>
+                            <div class="col-lg-6" id="map">
+                            </div>
+
+                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-BStQ4iLyw9FxwXRhxt6BJtlr-iG33wk&libraries=places" type="text/javascript"></script>
+                            <script>
+                                var map = new google.maps.Map(document.getElementById('map'), {
+                                    center:{
+                                        lat:25.286106,
+                                        lng:51.534817
+                                    },
+                                    zoom:15
+                                });
+                                var marker = new google.maps.Marker({
+                                    position:{
+                                        lat:25.286106,
+                                        lng:51.534817
+                                    },
+                                    map:map,
+
+                                    draggable: true
+                                });
+                                var searchBox = new google.maps.places.SearchBox(document.getElementById('mapsearch'));
+                                google.maps.event.addListener(searchBox, 'places_changed',function(){
+                                    var places =searchBox.getPlaces();
+                                    var bounds = new google.maps.LatLngBounds();
+                                    var i,place;
+
+                                    for(i=0;place=places[i];i++){
+                                        //console.long(place.geometry.location);
+                                        bounds.extend(place.geometry.location);
+                                        marker.setPosition(place.geometry.location);
+
+                                    }
+
+                                    map.fitBounds(bounds);
+                                    map.setZoom(15);
+
+                                });
+
+
+
+
+
+
+                                var geocoder = new google.maps.Geocoder();
+
+                                google.maps.event.addListener(marker, 'dragend', function () {
+
+                                    geocoder.geocode({'latLng': marker.getPosition()}, function (results, status) {
+                                        if (status == google.maps.GeocoderStatus.OK) {
+                                            if (results[0]) {
+                                                $('#maplat').val(marker.getPosition().lat());
+                                                $('#maplong').val (marker.getPosition().lng());
+                                                $('#mapsearch').val(results[0].formatted_address);
+
+                                                infowindow.setContent(results[0].formatted_address);
+                                                google.maps.event.trigger(map, 'resize');
+                                                infowindow.open(map, marker);
+                                            }
+                                        }
+                                    });
+                                });
+
+                            </script>
+                        </div>
+                    </div>
+                </section>
+                <section  id="contact">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <h2 class="section-heading">Contact Us</h2>
+                                <hr class="my-4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container contact-form">
+
+                        <form method="post">
+                            <p>Welcome to ShareRide the easiest to get around at the tap of a button.</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="txtName" class="form-control" placeholder="Your Name *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+
+
+          <!--  </div>-->
+
+    <th:block th:include="/driver/fragments/footer"></th:block>
+
+
+
+<!--
+            <aside th:include="/driver/fragments/indexslidebar"></aside>-->
+       <!-- </div>-->
+  <!--  </div>-->
+</div>
+
+<block th:include="/driver/fragments/headerlink :: footer"></block>
+</body>
+</html>

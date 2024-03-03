@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>share Ride</title>
+    <th:block th:include="/rider/fragments/headerlink :: head"></th:block>
+</head>
+<div class="page-container">
+    <!--/content-inner-->
+    <div class="left-content">
+        <div class="inner-content">
+
+            <header th:include="/rider/fragments/header :: header"></header>
+            <div class="content">
+                <div class="women_main">
+                    <div class="container">
+                        <h1 style="color:#B52E31 ">My <span style="color: #292b2c">Trip</span></h1>
+                        <div class="search">
+                            <p>Search Entire Date</p>
+                            <a class="border-left" th:href="@{#}">today</a>
+                            <a th:href="@{#}">Yesterday</a>
+                            <a th:href="@{#}">Current Week</a>
+                            <a th:href="@{#}">Previous Week</a>
+                            <a th:href="@{#}">Current Month</a>
+                            <a th:href="@{#}">Previous Month</a>
+
+                            <div class="form-group row" style="margin-top: 2%;">
+
+                                <div class="col-sm-4 ctl">
+                                    <form>
+                                        <input type="date" value="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Select date';}">
+                                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                    </form>
+                                </div>
+                                <div class="col-sm-4 ctl">
+                                    <form>
+                                        <input type="date" value="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Select date';}" class="fas fa-calendar-alt" >
+
+                                    </form>
+                                </div>
+                                <button class=" btn-primary">Search</button>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <button onclick="sortTable()">Sort</button>
+                        <button onclick="sortable()">Sort</button>
+                        <table id="myTable" class="table table-hover table-responxive">
+                            <thead>
+                            <tr>
+                                <th scope="col" onclick="sortTable()" ondblclick="sortable()">Ride ID</th>
+                                <th scope="col">Driver</th>
+                                <th scope="col">Trip Date</th>
+                                <th scope="col">Fare</th>
+                                <th scope="col">car</th>
+                                <th scope="col">Invoice</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <tr>
+
+                                <td>23</td>
+                                <td>ac</td>
+                                <td>2/10/2018</td>
+                                <td>6$</td>
+                                <td>Bsic</td>
+                                <td><a th:href="@{/inv}"><i class="fa fa-sticky-note"></i></a></td>
+
+
+                            </tr>
+                            <tr>
+
+                                <td>23</td>
+                                <td>abc</td>
+                                <td>2/10/2018</td>
+                                <td>6$</td>
+                                <td>Basic</td>
+                                <td><a th:href="@{/inv}"><i class="fa fa-sticky-note"></i></a></td>
+
+
+                            </tr>
+                            <tr>
+
+                                <td>2</td>
+                                <td>bbc</td>
+                                <td>2/10/2018</td>
+                                <td>6$</td>
+                                <td>Basic</td>
+                                <td><a th:href="@{/inv}"><i class="fa fa-sticky-note"></i></a></td>
+
+
+                            </tr>
+                            <tr>
+
+                                <td>3</td>
+                                <td>c</td>
+                                <td>2/10/2018</td>
+                                <td>6$</td>
+                                <td>Basic</td>
+                                <td><a th:href="@{/inv}"><i class="fa fa-sticky-note"></i></a></td>
+
+
+                            </tr>
+                            <tr>
+
+                                <td>13</td>
+                                <td>abc</td>
+                                <td>2/10/2018</td>
+                                <td>6$</td>
+                                <td>Basic</td>
+                                <td><a th:href="@{/inv}"><i class="fa fa-sticky-note"></i></a></td>
+
+
+                            </tr>  <tr>
+
+                                <td>12</td>
+                                <td>abc</td>
+                                <td>2/10/2018</td>
+                                <td>6$</td>
+                                <td>Basic</td>
+                                <td><a th:href="@{/inv}"><i class="fa fa-sticky-note"></i></a></td>
+
+
+                            </tr>  <tr>
+
+                                <td>14</td>
+                                <td>abc</td>
+                                <td>2/10/2018</td>
+                                <td>6$</td>
+                                <td>Basic</td>
+                                <td><a th:href="@{/inv}"><i class="fa fa-sticky-note"></i></a></td>
+
+
+                            </tr>  <tr>
+
+                                <td>123</td>
+                                <td>abc</td>
+                                <td>2/10/2018</td>
+                                <td>6$</td>
+                                <td>Basic</td>
+                                <td><a th:href="@{/inv}"><i class="fa fa-sticky-note"></i></a></td>
+
+
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <th:block th:include="/rider/fragments/footer"></th:block>
+            <aside th:include="/rider/fragments/slidebar"></aside>
+        </div>
+    </div>
+</div>
+<th:block th:include="/rider/fragments/headerlink :: footer"></th:block>
+</body>
+</html>

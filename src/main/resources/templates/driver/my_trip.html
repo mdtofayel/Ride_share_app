@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>share Ride</title>
+    <th:block th:include="/driver/fragments/headerlink :: head"></th:block>
+</head>
+<div class="page-container">
+    <!--/content-inner-->
+    <div class="left-content">
+        <div class="inner-content">
+
+            <header th:include="/driver/fragments/header :: header"></header>
+            <div class="content">
+                <div class="women_main">
+                    <div class="container">
+                        <h1 style="color:#B52E31 ">My <span style="color: #292b2c">Trip</span></h1>
+                        <div class="search">
+                            <p>Search Entire Date</p>
+                            <a class="border-left" th:href="@{#}">today</a>
+                            <a th:href="@{#}">Yesterday</a>
+                            <a th:href="@{#}">Current Week</a>
+                            <a th:href="@{#}">Previous Week</a>
+                            <a th:href="@{#}">Current Month</a>
+                            <a th:href="@{#}">Previous Month</a>
+
+                            <div class="form-group row" style="margin-top: 2%;">
+
+                                <div class="col-sm-4 ctl">
+                                    <form>
+                                        <input type="date" value="Select date" onfocus="this.value = '';"
+                                               onblur="if (this.value == '') {this.value = 'Select date';}">
+                                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                    </form>
+                                </div>
+                                <div class="col-sm-4 ctl">
+                                    <form>
+                                        <input type="date" value="Select date" onfocus="this.value = '';"
+                                               onblur="if (this.value == '') {this.value = 'Select date';}"
+                                               class="fas fa-calendar-alt">
+
+                                    </form>
+                                </div>
+                                <button class=" btn-primary">Search</button>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <table Id="myTable" class="table table-hover table-responxive">
+                            <thead>
+                            <tr>
+                                <th scope="col" onclick="sortTable()" ondblclick="sortable()">Ride ID</th>
+                                <th scope="col">Trip Id</th>
+                                <th scope="col">Trip Date</th>
+                                <th scope="col">Fare</th>
+                                <th scope="col">car</th>
+                                <th scope="col">Invoice</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <tr th:each="listOfTrip : ${listOfTrip}">
+
+                                <td th:text="${listOfTrip.tripId != null ? listOfTrip.tripId : 'Not Found'}">23</td>
+                                <td> <span th:text="${listOfTrip.driver.name != null ? listOfTrip.driver.name : 'Not Found'}"></span></td>
+                                <td th:text="${listOfTrip.tripDate != null ? listOfTrip.tripDate : 'Not Found'}"></td>
+                                <td th:text="${listOfTrip.payment.totalRideCost != null ? listOfTrip.payment.totalRideCost : 'Not Found'}">6$</td>
+                                <td><span th:text="${listOfTrip.driver.vehicleInfo.vehicleModel != null ? listOfTrip.driver.vehicleInfo.vehicleModel : 'Not Found'}"></span></td>
+                                <td><span><a th:href="@{'/invoice/'+${listOfTrip.tripId}}"><i class="fa fa-sticky-note"></i></a></span></td>
+
+
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <th:block th:include="/driver/fragments/footer"></th:block>
+            <aside th:include="/driver/fragments/slidebar"></aside>
+        </div>
+    </div>
+</div>
+<th:block th:include="/driver/fragments/headerlink :: footer"></th:block>
+</body>
+</html>

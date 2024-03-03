@@ -1,0 +1,30 @@
+<header class="main-header" xmlns:th="http://www.thymeleaf.org">
+
+
+
+            <div class="header-section">
+                <!-- top_bg -->
+                <div class="top_bg">
+
+                    <div class="header_top">
+                        <div class="top_right">
+                            <ul>
+                                <li><a th:href="@{contact.html}">help</a></li>
+                                <li><a th:href="@{contact.html}">Contact</a></li>
+
+                                <!--li><a th:href="@{checkout.html}">Delivery information</a></li-->
+                            </ul>
+
+                        </div>
+<div class="top_left">
+    <h6 th:text="${riderProfile.riderFullname}">User NAme</h6>
+</div>
+
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"></div>
+                <!-- /top_bg -->
+            </div>
+</header>
+

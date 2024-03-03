@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>share Ride</title>
+    <th:block th:include="fragments/headerlink :: head"></th:block>
+</head>
+<body>
+<form th:action="@{/registration}" method="get">
+    <button class="btn btn-md btn-warning btn-block" type="Submit">Go To Registration Page</button>
+</form>
+<div class="wrapper fadeInDown">
+    <div Id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="images/logo.png"  Id="icon" alt="User Icon" />
+            <h1>Share Ride</h1>
+        </div>
+
+        <!-- Login Form -->
+        <form th:action="@{/login}" method="POST" class="form-signin">
+
+            <input type="email" Id="email" name="email" class="form-control"  th:placeholder="Email"><br>
+            <input type="password" Id="password" name="password" class="form-control"  th:placeholder="Password">
+            <div align="center" th:if="${param.error}">
+                <p style="font-size: 12px; color: #FF1C19;">Email or Password invalid, please verify</p>
+            </div>
+            <input type="submit" class="fadeIn fourth" value="Log In">
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div Id="formFooter">
+            <a class="underlineHover" href="/index">Go to Home</a>
+        </div>
+
+    </div>
+</div>
+
+<th:block th:include="/fragments/headerlink :: footer"></th:block>
+</body>
+</html>

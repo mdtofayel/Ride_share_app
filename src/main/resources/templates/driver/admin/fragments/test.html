@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="content-wrapper">
+    <div class="single_content_area area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="tab-content">
+                        <div id="details" class="tab-pane fade in active">
+                            <div class="thumbnail myThumb">
+                                <a href="#">
+                                    <div class="image_mask">
+                                        <i class="icon-credit-card"></i>
+                                    </div>
+                                    <img alt="Image" th:src="@{'/Admin/theme/digitalItems/product/image/'+${digitalItem.slug}}"
+                                         style="width: 100%;"/>
+                                </a>
+                                <div class="btn-group myBtnGrp" th:if="${previewURLeditable}">
+                                    <a class="btn" target="_blank" th:href="${previewURLeditable}">Live Preview <i
+                                            class="icon-credit-card"></i></a>
+                                </div>
+                                <div class="btn-group myBtnGrp">
+                                    <a class="btn" href="#" data-toggle="modal" data-target="#previeModal">Screenshots
+                                        <i class="fa fa-eye"></i></a>
+
+                                </div>
+                            </div>
+                            <!--<div class="text-center">-->
+                            <!--<a th:href="@{'/DigitalItem/addToFavorite/' + ${digitalItem.id}}"-->
+                            <!--class="btn btn-default"-->
+                            <!--th:classappend="${isActiveFav}? active : ''"><i class="icon-heart"></i> Add to-->
+                            <!--Favorites</a>-->
+
+                            <!--<a th:href="@{'/DigitalItem/addToCollection/' + ${digitalItem.id}}"-->
+                            <!--class="btn btn-default"-->
+                            <!--th:classappend="${isActiveCol}? active : ''"><i class="icon-folder-open"></i> Add-->
+                            <!--to-->
+                            <!--Collection</a>-->
+                            <!--</div>-->
+
+                            <div class="product_description padding-20">
+                                <p class="para5" th:text="${digitalItem.description}">description</p>
+                            </div>
+
+                            <div class="product_feature">
+                                <h3 class="heading3">Features</h3>
+                                <hr>
+                                <!--<p class="para5" th:text="${digitalItem.lognDescription}">description</p>-->
+
+                                <div th:remove="tag" th:utext="${digitalItem.lognDescription}"></div>
+                            </div>
+
+                            <div class="note">
+                                <h3 class="heading3">Note</h3>
+                                <hr>
+                                <p class="para5">All upload are just used for preview purpose only and not INCLUDED
+                                    in the
+                                    Package files. if you have a question send us a message.</p>
+                            </div>
+
+                            <h3 class="heading3 change-log-marzin">Change Log</h3>
+                            <hr>
+                            <div th:each="digitalVersion : ${digitalItem.digitalItemVersionsList}">
+
+                                <table class="table table-striped table-bordered">
+                                    <tbody>
+                                    <tr>
+                                        <td><a style="color: black">Version :</a> <a
+                                                th:text="${digitalVersion.versionNo}"></a></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td><a style="color: black">Release Date :</a> <a
+                                                th:text="${#dates.format(digitalVersion.created, 'dd MMM yyyy')}"></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td><a style="color: black">Change :</a> <a
+                                                th:text="${digitalVersion.changeLog}"></a></td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+
+                        </div>
+                        <div id="comment" class="tab-pane fade">
+                            <h3>Comment under Construction</h3>
+                        </div>
+                        <div id="support" class="tab-pane fade">
+                            <h3>Support under construction</h3>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!--<th:block th:include="fragments/item_right_side :: item_right_side"></th:block>-->
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="widget_box">
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <h3 class="heading6">Regular License</h3>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <span class="price_large" th:text="'  '+${digitalItem.price}+' BDT'"></span>
+                                    </div>
+                                </div>
+                                <hr class="reset_margin">
+                                <div class="col-sm12">
+                                    <ul style="list-style: " class="margin_top_bottom_15">
+
+                                        <li>Quality checked by Shadowhite</li>
+
+
+                                        <li>Single Application <a th:text="'  '+${digitalItem.price}"></a>
+                                            Taka <a href="#"></a></li>
+                                        <li>Multiple Application <a th:text="'  '+${digitalItem.multiplePrice}"></a>
+                                            Taka <a href="#"></a></li>
+                                        <li>Extend Price <a th:text="'  '+${digitalItem.extendedPrice}"></a>
+                                            Taka <a href="#"></a></li>
+                                        <li>Extend six month support for <a
+                                                th:text="'  '+${digitalItem.sixMonthSupportPrice}"></a>
+                                            Taka <a href="#"></a></li>
+
+                                        <!--<li><a th:href="@{/DigitalItem/usage-licenses/}">License</a></li>-->
+                                    </ul>
+                                </div>
+                                <!--<a href="#" class="widget_button button_green"><i class="icon-shopping-cart"></i> Add to-->
+                                <!--Cart</a>-->
+
+
+                                <!--if cart is presented-->
+                                <div th:if="${isActiveCartLocal==false}">
+                                    <a th:href="@{'/DigitalItem/theme/addToCart/' + ${digitalItem.id}}"
+                                       class="widget_button button_green"
+                                    ><i class="icon-shopping-cart"></i> Add to Cart</a>
+                                </div>
+
+                                <!--if cart is not presented-->
+                                <div th:if="${isActiveCartLocal==true}">
+                                    <a th:href="@{'/DigitalItem/theme/addToCart/' + ${digitalItem.id}}"
+                                       class="widget_button button_green"
+                                    ><i class="icon-shopping-cart"></i>Carted</a>
+                                </div>
+
+
+                                <div>
+                                    <a th:href="@{'/Admin/theme/digitalItems/product/mainfile/' + ${digitalItem.id}}"
+                                       class="widget_button button_green"><i class="icon-shopping-cart"></i></i>
+                                        Download</a>
+                                </div>
+                                <!--<a href="#" class="widget_button button_gray"><i class="icon-shopping-cart"></i> Add to Cart</a>-->
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="widget_box bg_gray">
+                    <span class="heading1"><i class="icon-shopping-cart"
+                                              th:text="'  '+${#lists.size(digitalItem.digitalItemPurchases)}"></i></span>
+                                <span class="para1">Sales</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="widget_box bg_blue">
+                                <a
+                                        class="color_blue">
+                    <span class="heading1"><i class="icon-comment"
+                                              th:text="'  '+${#lists.size(digitalItem.digitalItemComments)}">></i> </span>
+                                    <span class="para1">Comments</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="widget_box bg_gray">
+                                <a><b class="">Item Rating:</b></a> <span class=""><b
+                                    th:text="'  '+${average}+' '"></b><a
+                                    class="color_black">average based on</a><b
+                                    th:text="'  '+${#lists.size(digitalItem.digitalItemRatingList)}+' '"></b><a
+                                    class="color_black">ratings </a></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="widget_box bg_gray table-responsive">
+                                <table class="table">
+                                    <tr>
+                                        <th>Last Update</th>
+
+                                        <td th:text="${#dates.format(digitalItem.created, 'dd MMM yyyy')}"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>Created</th>
+                                        <td th:text="${#dates.format(digitalItem.modified, 'dd MMM yyyy')}"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>High Resolution</th>
+                                        <td th:text="${digitalItem.highResolution}"></td>
+                                    </tr>
+                                    <tr>
+
+                                        <th>Compatible Browsers</th>
+                                        <td th:if="${digitalItem.digitalItemCompatableBrowsersList != null}">
+
+
+                                            <a
+                                                    th:each="p : ${digitalItem.digitalItemCompatableBrowsersList}"
+                                                    th:text="${p.compatableBrowsers.name}+','"
+                                            ></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>ThemeForest Files Included</th>
+                                        <td>
+                                            <a th:each="p : ${digitalItem.digitalItemFileIncludedList}"
+                                               th:text="${p.fileIncluded.name}+','"
+                                            ></a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Versions</th>
+                                        <td>
+                                            <a th:each="p : ${digitalItem.digitalItemSoftwareVersionsList}"
+                                               th:text="${p.softwareVersions.version}+','"
+                                            ></a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Columns</th>
+                                        <td>4+</td>
+                                    </tr>
+                                    <tr>
+
+                                        <th>Documentation</th>
+                                        <td th:text="${digitalItem.documentation}"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Layout</th>
+                                        <td>Responsive</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Tags</th>
+                                        <td>
+                                            <a th:each="p : ${digitalItem.digitalItemTags}"
+                                               th:text="${p.tagsName}+','"
+                                            ></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="previeModal" class="modal fade preview" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-content">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+
+
+                            <div class="item active">
+                                <!--<img class="img-responsive" src="http://placehold.it/1200x600/fffccc/000&text=Two" alt="...">-->
+
+                                <img class="img-responsive"
+                                     th:src="@{'/Admin/theme/digitalItems/screenshot/image/'+${digitalItem.slug}+'/'+${digitalItem.slug}+1}"
+                                     alt="...">
+
+                                <!--<img class="img-responsive" th:src="@{'/DigitalItem/image/'+${digitalItem.slug}+'/'+${digitalItem.slug}+'1'}" alt="...">-->
+                                <div class="carousel-caption">
+                                    One Image
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <img class="img-responsive"
+                                     th:src="@{'/Admin/theme/digitalItems/screenshot/image/'+${digitalItem.slug}+'/'+${digitalItem.slug}+2}"
+                                     alt="...">
+                                <div class="carousel-caption">
+                                    Another Image
+                                </div>
+                            </div>
+
+
+                            <div class="item" if="${digitalItem.slug}">
+                                <img class="img-responsive"
+                                     th:src="@{'/Admin/theme/digitalItems/screenshot/image/'+${digitalItem.slug}+'/'+${digitalItem.slug}+3}"
+                                     alt="...">
+                                <div class="carousel-caption">
+                                    Another Image
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button"
+                           data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button"
+                           data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <th:block th:include="fragments/footer"></th:block>
+</div>
+
+
+</body>
+</html>

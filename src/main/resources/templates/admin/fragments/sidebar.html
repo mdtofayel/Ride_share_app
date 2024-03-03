@@ -1,0 +1,189 @@
+<aside class="main-sidebar" xmlns:th="http://www.thymeleaf.org">
+	<!-- sidebar: style can be found in sidebar.less -->
+	<section class="sidebar">
+		<!-- Sidebar driver panel -->
+		<div class="driver-panel">
+			<div class="pull-left image">
+				<img class="img-circle"
+					alt="User Image">
+			</div>
+			<div class="pull-left info">
+				<p ></p>
+				<a href="#"><i class="fa fa-circle text-success"></i>Online</a>
+			</div>
+		</div>
+
+		<ul class="sidebar-menu">
+			<li class="header">MAIN NAVIGATION</li>
+			<li class="treeview"><a  th:href="@{/Admin/theme/driver/info}">
+				<i class="fa fa-dashboard"></i> <span>Dashboard</span>
+			</a></li>
+
+
+			<li class="treeview"><a  th:href="@{/Admin/theme/digitalItems/approvedinfo}"> <i
+					class="fa fa-driver-circle"></i> <span>Admin</span>
+			</a></li>
+
+			<li class="treeview"><a  th:href="@{/Admin/theme/digitalItems/published}"> <i
+					class="fa fa-circle-o-notch"></i> <span>Driver</span>
+			</a></li>
+
+			<li class="treeview"><a  th:href="@{/Admin/theme/digitalItems/rejectinfo}"> <i
+					class="fa fa-taxi"></i> <span>Taxi</span>
+			</a></li>
+
+
+			<li class="treeview"><a  th:href="@{/Admin/theme/digitalItems/userfeedback}"> <i
+					class="fa fa-plus-circle"></i> <span>Rentel Package</span>
+			</a></li>
+
+
+			<li class="treeview"><a  th:href="@{/Admin/theme/driver/userRoll}"> <i
+					class="fa fa-car"></i> <span>Vehicle Type</span>
+			</a></li>
+
+			<li class="treeview"><a  th:href="@{/Admin/theme/digitalItems/soldItems}"> <i
+					class="fa fa-users"></i> <span>Rider</span>
+			</a></li>
+
+
+			<li class="treeview"><a  th:href="@{/Admin/theme/digitalItems/paymentDetails}"> <i
+					class="fa fa-address-book"></i> <span>Manual Booking</span>
+			</a></li>
+			<li class="treeview"><a  th:href="@{/Admin/theme/digitalItems/paymentDetails}"> <i
+					class="fa fa-map-marker"></i> <span>Trips</span>
+			</a></li>
+			<li class="treeview"><a  th:href="@{/Admin/theme/digitalItems/paymentDetails}"> <i
+					class="fa fa-pencil-square-o"></i> <span>Ride Later Booking</span>
+			</a></li>
+			<li class="treeview"><a  th:href="@{/Admin/theme/digitalItems/paymentDetails}"> <i
+					class="fa fa-spinner"></i> <span>PromoCode</span>
+			</a></li>
+			<li class="treeview"><a th:href="@{/Admin/theme/digitalItems/paymentDetails}"> <i
+					class="fa fa-map"></i> <span>Heat View</span>
+			</a></li>
+			<li class="treeview"><a  th:href="@{/Admin/theme/digitalItems/paymentDetails}"> <i
+					class="fa fa-commenting-o"></i> <span>Reviews</span>
+			</a></li>
+
+			<li class="treeview"><a href="#"> <i class="fa fa-microchip"></i>
+				<span>Reports</span> <span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<!--<li><a  href="/Admin/badges}"><i-->
+					<!--class="fa fa-circle-o"></i> Badge</a></li>-->
+					<li><a  th:href="@{/Admin/theme/categories/showcategories}"><i
+							class="fa fa-circle-o"></i>Payment Report</a></li>
+					<li><a  th:href="@{/Admin/theme/compatableBrowsers/showBrowsers}"><i
+							class="fa fa-circle-o"></i> Refferal Report</a></li>
+					<li><a  th:href="@{/Admin/theme/compatiblewith/showcompatiblewith}"><i
+							class="fa fa-circle-o"></i> User Wallet Report</a></li>
+					<!--<li><a  href="/admin/digitalItems/showdigitalitems"><i-->
+					<!--class="fa fa-circle-o"></i> Digital Items</a></li>-->
+					<li><a  th:href="@{/Admin/theme/fileincluded/showfileincluded}"><i
+							class="fa fa-circle-o"></i> Driver Payment Report</a></li>
+					<li><a  th:href="@{/Admin/theme/frameworks/showframework}"><i
+							class="fa fa-circle-o"></i>Driver Log Report</a></li>
+					<li><a
+							th:href="@{/Admin/theme/softwareversions/showsoftwareversion}"><i
+							class="fa fa-circle-o"></i> Cancelled Trip</a></li>
+					<li><a
+							th:href="@{/Admin/theme/softwareversions/showsoftwareversion}"><i
+							class="fa fa-circle-o"></i>Trip Acceptance Report</a></li>
+					<li><a
+							th:href="@{/Admin/theme/softwareversions/showsoftwareversion}"><i
+							class="fa fa-circle-o"></i>Trip Time Variance</a></li>
+				</ul></li>
+
+			<li class="treeview"><a href="#"> <i class="fa fa-location-arrow"></i>
+				<span>Manage Locations</span> <span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<!--<li><a  href="/Admin/badges}"><i-->
+					<!--class="fa fa-circle-o"></i> Badge</a></li>-->
+					<li><a  th:href="@{/Admin/theme/categories/showcategories}"><i
+							class="fa fa-circle-o"></i>Geo Fence Location</a></li>
+					<li><a  th:href="@{/Admin/theme/compatableBrowsers/showBrowsers}"><i
+							class="fa fa-circle-o"></i> Restricted Area</a></li>
+					<li><a  th:href="@{/Admin/theme/compatiblewith/showcompatiblewith}"><i
+							class="fa fa-circle-o"></i> Locationwase Fare</a></li>
+					<!--<li><a  href="/admin/digitalItems/showdigitalitems"><i-->
+
+				</ul></li>
+			<li class="treeview"><a href="#"> <i class="fa fa-cog"></i>
+				<span>Settings</span> <span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<!--<li><a  href="/Admin/badges}"><i-->
+					<!--class="fa fa-circle-o"></i> Badge</a></li>-->
+					<li><a  th:href="@{/Admin/theme/categories/showcategories}"><i
+							class="fa fa-circle-o"></i>General</a></li>
+					<li><a  th:href="@{/Admin/theme/compatableBrowsers/showBrowsers}"><i
+							class="fa fa-circle-o"></i>Email Templates</a></li>
+					<li><a  th:href="@{/Admin/theme/compatiblewith/showcompatiblewith}"><i
+							class="fa fa-circle-o"></i>SMS templates</a></li>
+					<!--<li><a  href="/admin/digitalItems/showdigitalitems"><i-->
+					<!--class="fa fa-circle-o"></i> Digital Items</a></li>-->
+					<li><a  th:href="@{/Admin/theme/fileincluded/showfileincluded}"><i
+							class="fa fa-circle-o"></i> MAnage Documents</a></li>
+					<li><a  th:href="@{/Admin/theme/frameworks/showframework}"><i
+							class="fa fa-circle-o"></i>Currency</a></li>
+					<li><a
+							th:href="@{/Admin/theme/softwareversions/showsoftwareversion}"><i
+							class="fa fa-circle-o"></i>SEO Settings</a></li>
+				</ul></li>
+			<li class="treeview"><a href="#"> <i class="fa fa-wrench"></i>
+				<span>Utilities</span> <span class="pull-right-container"> <i
+						class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+				<ul class="treeview-menu">
+					<!--<li><a  href="/Admin/badges}"><i-->
+					<!--class="fa fa-circle-o"></i> Badge</a></li>-->
+					<li><a  href="#"><i class="fa fa-circle-o"></i><span>Localization</span><span class="pull-right-container"> <i
+							class="fa fa-angle-left pull-right"></i>
+				</span>
+					</a>
+						<ul class="treeview-menu">
+							<li><a  th:href="@{/Admin/theme/compatableBrowsers/showBrowsers}"><i
+									class="fa fa-circle-o"></i>Pages</a></li>
+							<li><a  th:href="@{/Admin/theme/compatiblewith/showcompatiblewith}"><i
+									class="fa fa-circle-o"></i>Edit Home Page</a></li>
+						</ul></li>
+					<li><a  th:href="@{/Admin/theme/compatableBrowsers/showBrowsers}"><i
+							class="fa fa-circle-o"></i>Pages</a></li>
+					<li><a  th:href="@{/Admin/theme/compatiblewith/showcompatiblewith}"><i
+							class="fa fa-circle-o"></i>Edit Home Page</a></li>
+					<!--<li><a  href="/admin/digitalItems/showdigitalitems"><i-->
+					<!--class="fa fa-circle-o"></i> Digital Items</a></li>-->
+					<li><a  th:href="@{/Admin/theme/fileincluded/showfileincluded}"><i
+							class="fa fa-circle-o"></i> Our DRiver</a></li>
+					<li><a  th:href="@{/Admin/theme/frameworks/showframework}"><i
+							class="fa fa-circle-o"></i>Car Make</a></li>
+					<li><a
+							th:href="@{/Admin/theme/softwareversions/showsoftwareversion}"><i
+							class="fa fa-circle-o"></i>Car Model</a></li>
+					<li><a
+							th:href="@{/Admin/theme/softwareversions/showsoftwareversion}"><i
+							class="fa fa-circle-o"></i>Faq</a></li>
+					<li><a
+							th:href="@{/Admin/theme/softwareversions/showsoftwareversion}"><i
+							class="fa fa-circle-o"></i>Faq Catogeries</a></li>
+				</ul></li>
+
+			<li class="treeview"><a  th:href="@{/logout}"> <i
+					class="fa fa-sign-out"></i> <span>Log out</span>
+			</a></li>
+
+
+		</ul>
+	</section>
+	<!-- /.sidebar -->
+</aside>
+<th:block th:include="theme/fragments/control_sidebar"></th:block>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en" th:fragment="head">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta
+            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+            name="viewport">
+
+
+    <!-- Bootstrap 3.3.6 -->
+
+
+    <!--<style type="text/css" th:src="@{/admin/bootstrap/css/bootstrap.min.css}"></style>-->
+    <link rel="stylesheet"
+          th:href="@{/admin/bootstrap/css/bootstrap.min.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/admin/font-awesome/css/font-awesome.min.css}">
+    <!-- Ionicons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- Theme style -->
+
+    <link rel="stylesheet" th:href="@{/admin/css/AdminLTE.min.css}">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" th:href="@{/admin/css/skins/_all-skins.min.css}">
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" th:href="@{/admin/css/style.css}">
+
+    <!-- DataTables -->
+    <link rel="stylesheet"  href="admin/plugins/datatables/dataTables.bootstrap.css">
+
+</head>
+<body>
+
+<th:block th:fragment="footer">
+
+    <!-- jQuery 2.2.3 -->
+    <script th:src="@{/admin/plugins/jQuery/jquery-2.2.3.min.js}"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.6 -->
+    <script th:src="@{/admin/bootstrap/js/bootstrap.min.js}"></script>
+    <!-- AdminLTE App -->
+    <script th:src="@{/admin/js/app.min.js}"></script>
+
+    <script th:src="@{/admin/js/jquery.m.s.s.js}"></script>
+
+</th:block>
+</body>
+</html>
